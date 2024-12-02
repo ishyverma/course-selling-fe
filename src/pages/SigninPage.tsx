@@ -1,4 +1,4 @@
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Navbar } from "../components/Navbar"
 import axios from "axios"
 import { EyeClose } from "../icons/EyeClose"
@@ -6,6 +6,7 @@ import { EyeOpen } from "../icons/EyeOpen"
 import { Link, useNavigate } from "react-router-dom"
 
 export const SigninPage = () => {
+    const isLoggedIn = localStorage.getItem("token") ? true : false
     const navigate = useNavigate()
     const [show, setShow] = useState(false)
     const emailRef = useRef<HTMLInputElement>()
@@ -19,6 +20,12 @@ export const SigninPage = () => {
             localStorage.setItem("token", response.data.token)
         }).then(() => navigate("/course")).catch(err => alert(err.message))
     }
+    useEffect(() => {
+        if (isLoggedIn) {
+            navigate("/course")
+            return
+        }
+    }, [])
     return <div>
         <Navbar />
         <div className="mt-16 flex justify-center items-center h-[80vh]">

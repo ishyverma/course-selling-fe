@@ -1,4 +1,4 @@
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Navbar } from "../components/Navbar"
 import { EyeOpen } from "../icons/EyeOpen"
 import { EyeClose } from "../icons/EyeClose"
@@ -6,6 +6,7 @@ import axios from "axios"
 import { Link, useNavigate } from "react-router-dom"
 
 export const SignupPage = () => {
+    const isLoggedIn = localStorage.getItem("token") ? true : false
     const [show, setShow] = useState(false)
     const navigate = useNavigate()
     const firstNameRef = useRef<HTMLInputElement>()
@@ -22,6 +23,11 @@ export const SignupPage = () => {
             alert("Signed Up")
         }).then(() => navigate("/signin")).catch(err => alert(err.message))
     }
+    useEffect(() => {
+        if (isLoggedIn) {
+            navigate("/course")
+        }
+    })
     return <div>
         <div>
             <Navbar />
