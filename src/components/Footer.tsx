@@ -4,13 +4,13 @@ import { Twitter } from "../icons/X"
 import { Youtube } from "../icons/Youtube"
 
 export const Footer = () => {
-    return <div className="flex border-t border-[#222327] pt-10 mb-10 w-[90%] m-auto gap-72">
+    return <div className="flex border-t flex-wrap sm:flex-nowrap border-[#222327] pt-10 mb-10 w-[90%] m-auto gap-72">
         <div className="flex flex-col">
             <div className="flex">
                 <img className="rounded-full" src="https://appx-wsb-gcp.akamai.net.in/subject/2023-01-17-0.17044360120951185.jpg" alt="web" width={70}/>
                 <div className="ml-2 flex">
                     <div>
-                        <h1 className="cursor-pointer font-satoshi font-extrabold content-center text-transparent bg-clip-text  bg-gradient-to-t from-[#2456dc] to-[#5091f2] text-3xl">100xDevs</h1>
+                        <h1 className="cursor-pointer font-satoshi font-extrabold content-center text-transparent bg-clip-text  bg-gradient-to-t from-[#2456dc] to-[#5091f2]">100xDevs</h1>
                         <h1 className="text-white font-satoshi text-md font-light">
                             because 10x aint't enough.
                         </h1>
@@ -47,7 +47,7 @@ export const Footer = () => {
                 </div>
             </div>
         </div>
-        <div className="flex flex-col gap-4 mx-auto">
+        <div className="sm:flex flex-col gap-4 mx-auto hidden">
             <h1 className="text-white font-satoshi text-md font-light">
                 100x Links
             </h1>
@@ -58,7 +58,7 @@ export const Footer = () => {
                 Report
             </h1>
         </div>
-        <div className="flex flex-col gap-4 ml-auto">
+        <div className="sm:flex flex-col gap-4 ml-auto hidden">
             <h1 className="text-white font-satoshi text-md font-light">
                 100x Legal
             </h1>

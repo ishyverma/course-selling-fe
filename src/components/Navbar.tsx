@@ -35,7 +35,7 @@ export const Navbar = () => {
                 <h1 className="cursor-pointer font-satoshi font-extrabold content-center text-transparent bg-clip-text bg-gradient-to-t from-[#2456dc] to-[#5091f2] text-xl">100xDevs</h1>
             </div>
             <div className="flex gap-2 self-center">
-                {isLoggedIn && <div className="mr-2 relative text-[#9BA3AF]">
+                {isLoggedIn && <div className="mr-2 relative text-[#9BA3AF] sm:block hidden">
                     <input className="font-satoshi outline-none bg-[#030712] border border-[#1F2937] text-sm py-2 rounded-md px-10" placeholder="Search Anything" type="text" />
                     <div className="absolute top-[9px] left-3">
                         <Search />
@@ -52,7 +52,7 @@ export const Navbar = () => {
                 </div>
                 {isLoggedIn ? <div className="bg-gradient-to-t cursor-pointer from-[#2456dc] to-[#5091f2] flex justify-center items-center rounded-full h-10 w-10 relative" onClick={() => setToggle(!toggle)}>
                     <Person />
-                    {toggle && <div className="absolute top-12 -right-14">
+                    {toggle && <div className="absolute top-12 sm:-right-14 -right-3">
                         <div className="bg-[#171717] w-48 rounded-md border border-[#1F2937] flex flex-col justify-center items-center">
                             <div className="w-[95%] flex flex-col mt-1 mb-1">
                                 <div className="hover:bg-[#1F2937] transition-all rounded-md flex justify-start py-2">
@@ -121,7 +121,10 @@ export const Navbar = () => {
                             </div>
                         </div>
                     </div>}
-                </div> : <div className="flex gap-2"><Button onClick={signupNavigate} text="Login" variant="secondary"/>
+                </div> : <div className="flex gap-2">
+                        <Link to={"/signin"}>
+                            <Button onClick={signupNavigate} text="Login" variant="secondary"/>
+                        </Link>
                 <Link to={"https://harkirat.classx.co.in/new-courses"} target="_blank">
                     <Button text="Join now" variant="primary"/>
                 </Link></div>}

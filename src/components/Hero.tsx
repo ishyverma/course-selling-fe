@@ -4,12 +4,12 @@ import { Button } from "../ui/Button"
 
 export const Hero = () => {
     return <div>
-        <div className="flex flex-col justify-center items-center font-satoshi font-extrabold pt-36">
-            <div className="text-[65px] tracking-tighter">
+        <div className="flex flex-col text-center overflow-y-hiddenhidden justify-center items-center font-satoshi font-extrabold pt-36">
+            <div className="sm:text-[65px] text-[40px] tracking-tighter">
                 <span className="text-transparent bg-clip-text bg-gradient-to-t from-[#2456dc] to-[#5091f2]">100xDevs,</span>
                 <span className="text-[#BDC0C2]"> because</span>
             </div>
-            <div className="text-[65px] tracking-tighter leading-[35px]">
+            <div className="sm:text-[65px] text-[40px] tracking-tighter leading-[35px]">
                 <span className="text-[#BDC0C2]">10x ain't enough!</span>
             </div>
             <div className="mt-6">
@@ -26,21 +26,21 @@ export const Hero = () => {
             <img src="https://100x-b-mcdn.akamai.net.in/images/ds.jpeg" width={340} className="rounded-2xl hover:-translate-y-3 transition-all cursor-pointer border border-[#3A3B3F]" alt="" />
             <img src="https://appxcontent.kaxa.in/paid_course3/2024-07-09-0.6125162399767927.png" width={340} className="rounded-2xl hover:-translate-y-3 transition-all border cursor-pointer border-[#3A3B3F]" alt="" />
         </div>
-        <div className="flex justify-between w-[90%] h-72 m-auto mt-10 bg-gradient-to-t mb-10 overflow-hidden from-[#2456dc] to-[#5091f2] rounded-2xl">
-            <div className="pt-6 pl-5 pb-24 w-[60%] flex">
-                <div className="flex flex-col">
-                    <span className="font-satoshi tracking-tighter text-white text-3xl font-bold">Every developer deserves to be a great engineer, a 100xEngineer!</span>
-                    <span className="text-white font-satoshi font-normal mt-2 text-lg">Give yourself the power you deserve with a 100xdevs today!</span>
-                    <div className="flex gap-2 mt-4">
-                        <button className="flex gap-1 content-center bg-white hover:bg-[#E1E2E4] font-satoshi text-xs py-3 px-6 rounded transition-all">
-                            <div className="flex self-center">
+        <div className="flex flex-wrap sm:flex-nowrap sm:justify-between justify-center w-[90%] h-72 m-auto mt-10 bg-gradient-to-t mb-10 overflow-hidden from-[#2456dc] to-[#5091f2] rounded-2xl">
+            <div className="sm:pt-6 pt-3 sm:pl-5 pb-24 w-[60%] flex">
+                <div className="flex flex-col sm:items-start items-center">
+                    <span className="font-satoshi tracking-tighter text-white sm:text-3xl text-xl font-bold">Every developer deserves to be a great engineer, a 100xEngineer!</span>
+                    <span className="text-white font-satoshi font-normal mt-2 md:text-lg text-xs">Give yourself the power you deserve with a 100xdevs today!</span>
+                    <div className="flex flex-wrap sm:flex-none gap-2 mt-4">
+                        <button className="flex gap-1 content-center bg-white hover:bg-[#E1E2E4] font-satoshi text-xs py-3 px-6 rounded transition-all w-full sm:w-auto justify-center">
+                            <div className="flex">
                                 <Download />
                             </div>
                             <div>
                                 Download App
                             </div>
                         </button>
-                        <button className="flex gap-1 content-center bg-[#1F2937] hover:bg-[#25385A] font-satoshi text-xs py-3 px-7 rounded transition-all text-white">
+                        <button className="flex gap-1 content-center bg-[#1F2937] hover:bg-[#25385A] font-satoshi text-xs py-3 px-7 rounded transition-all text-white w-full sm:w-auto justify-center">
                             <div className="flex self-center">
                                 <Star />
                             </div>
@@ -51,7 +51,7 @@ export const Hero = () => {
                     </div>
                 </div>
             </div>
-            <div>
+            <div className="hidden md:block">
                 <img width={350} className="rotate-3 pt-10 hover:-translate-y-3 transition-all hover:rotate-6 pr-10 cursor-pointer" src="https://app.100xdevs.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FMockup.01b5ae40.png&w=1920&q=75" alt="phone-web" />
             </div>
         </div>
